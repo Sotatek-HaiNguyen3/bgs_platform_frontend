@@ -1,21 +1,21 @@
-import React from 'react'
-import { Formik } from 'formik';
-import { useHistory } from "react-router-dom";
+import React from "react";
+import { Formik } from "formik";
+import { useNavigate } from "react-router-dom";
 
-import { loginUsernameEffect } from 'store/auth/effects'
+import { loginUsernameEffect } from "store/auth/effects";
 
-import s from './style.module.scss'
+import s from "./style.module.scss";
 
 const Login = () => {
-  let history = useHistory();
+  let navigate = useNavigate();
   return (
     <Formik
-      initialValues={{ email: '', password: '' }}
+      initialValues={{ email: "", password: "" }}
       onSubmit={(values, { setSubmitting }) => {
-        loginUsernameEffect(values).then(res => {
-          console.log(res)
-          res?.token && history.push("/");
-        })
+        loginUsernameEffect(values).then((res) => {
+          console.log(res);
+          res?.token && navigate("/");
+        });
       }}
     >
       {({
@@ -51,7 +51,7 @@ const Login = () => {
         </form>
       )}
     </Formik>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
