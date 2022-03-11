@@ -5,6 +5,10 @@ import { useNavigate } from "react-router-dom";
 import { loginUsernameEffect } from "store/auth/effects";
 
 import s from "./style.module.scss";
+import Button from "components/common/Button";
+import Input from "components/common/Input";
+import { HiOutlineMail } from "react-icons/hi";
+import { AiOutlineEye } from "react-icons/ai";
 
 const Login = () => {
   let navigate = useNavigate();
@@ -29,25 +33,34 @@ const Login = () => {
         /* and other goodies */
       }) => (
         <form className={s.form} onSubmit={handleSubmit}>
-          <input
-            className={s.field}
+          <Input
+            className=""
             type="email"
             name="email"
+            placeholder="Email"
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.email}
+            icon={<HiOutlineMail size={24} color="#BDBDBD" />}
+            errors={errors}
           />
-          <input
-            className={s.field}
+          <Input
+            className=""
             type="password"
             name="password"
+            placeholder="Password"
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.password}
+            icon={<AiOutlineEye size={24} color="#BDBDBD" />}
+            errors={errors}
           />
-          <button type="submit" disabled={isSubmitting}>
-            Submit
-          </button>
+          <Button
+            type="submit"
+            disabled={isSubmitting}
+            title="Submit"
+            className="btn-full btn-primary"
+          />
         </form>
       )}
     </Formik>
