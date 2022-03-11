@@ -4,5 +4,11 @@
   ul {
     list-style: none;
     display: flex;
+    li {
+      a {
+        font-family: $poppins;
+        font-weight: 700;
+      }
+    }
   }
 }
