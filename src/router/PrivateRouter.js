@@ -1,27 +1,27 @@
-import React from 'react'
-import { Route, Redirect } from 'react-router-dom'
-import getToken from 'utils/auth/get-token'
+import React from "react";
+import { Route, Navigate } from "react-router-dom";
+import getToken from "utils/auth/get-token";
 
 export const AuthRoute = ({ children, ...rest }) => {
-  let auth = getToken()
+  let auth = getToken();
 
   return (
     <Route
       {...rest}
-      render={({ location }) => {
-        if(auth) {
-          return children
+      element={({ location }) => {
+        if (auth) {
+          return children;
         } else {
           return (
-            <Redirect
+            <Navigate
               to={{
-                pathname: '/login',
+                pathname: "/login",
                 state: { from: location },
               }}
             />
-          )
+          );
         }
       }}
     />
-  )
-}
+  );
+};

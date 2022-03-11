@@ -1,20 +1,20 @@
-import React from 'react'
-import { useHistory } from "react-router-dom";
-import { Formik } from 'formik'
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { Formik } from "formik";
 
-import { registerUsernameEffect } from 'store/auth/effects'
+import { registerUsernameEffect } from "store/auth/effects";
 
-import s from './style.module.scss'
+import s from "./style.module.scss";
 
 const Register = () => {
-  let history = useHistory();
+  let navigate = useNavigate();
   return (
     <Formik
-      initialValues={{ email: '', password: '' }}
+      initialValues={{ email: "", password: "" }}
       onSubmit={(values, { setSubmitting }) => {
-        registerUsernameEffect(values).then(res => {
-          res?.data?.id && history.push("/login");
-        })
+        registerUsernameEffect(values).then((res) => {
+          res?.data?.id && navigate("/login");
+        });
       }}
     >
       {({
@@ -45,13 +45,11 @@ const Register = () => {
             onBlur={handleBlur}
             value={values.password}
           />
-          <button type="submit">
-            Submit
-          </button>
+          <button type="submit">Submit</button>
         </form>
       )}
     </Formik>
-  )
-}
+  );
+};
 
-export default Register
+export default Register;
