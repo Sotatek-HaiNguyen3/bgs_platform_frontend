@@ -12,6 +12,7 @@ const Home = () => {
       <div className="row">
         <div className="col-6">
           <h1>{ process.env.REACT_APP_APPLICATION_NAME }</h1>
+          <p>My dashboard</p>
         </div>
 
         <div className="col-6">
