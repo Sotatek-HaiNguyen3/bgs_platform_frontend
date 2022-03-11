@@ -1,23 +1,21 @@
-import React, { Suspense } from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux'
-import './index.css';
-import reportWebVitals from './reportWebVitals';
-import store from './store/root-store'
-
-
-const LazyApp = React.lazy(() => import('./App'));
-
+import React from "react";
+import App from "./App";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
+import store from "./store/root-store";
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
   <React.Fragment>
     <Provider store={store}>
-      <Suspense fallback={<div>Loading...</div>}>
-        <LazyApp />
-      </Suspense>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </Provider>
   </React.Fragment>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

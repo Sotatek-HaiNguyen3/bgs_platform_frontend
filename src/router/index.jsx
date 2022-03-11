@@ -1,39 +1,57 @@
-import React from 'react'
-import {lazy} from 'react'
-import { Router, Route, Switch } from 'react-router-dom'
-import { history } from 'store/root-store'
-import { AuthRoute } from './PrivateRouter'
+import React, { lazy, Suspense } from "react";
+import { useRoutes } from "react-router-dom";
 
-import DefaultLayout from '../layout/DefaultLayout'
-import MainLayout from 'layout/MainLayout'
+import DefaultLayout from "../layout/DefaultLayout";
+import MainLayout from "layout/MainLayout";
+import getToken from "utils/auth/get-token";
+import LoadingIndicator from "components/common/LoadingIndicator";
 
-import HomePage from 'containers/Home'
-import Register from 'containers/Register'
-import Login from 'containers/Login'
-import NotFound from 'containers/NotFound'
+const HomePage = lazy(() => import("containers/Home"));
+const Register = lazy(() => import("containers/Register"));
+const Login = lazy(() => import("containers/Login"));
+const NotFound = lazy(() => import("containers/NotFound"));
 
-const Component = () => {
+const Router = () => {
+  let auth = getToken();
+
+  let layout = <DefaultLayout />;
+
+  if (auth) {
+    layout = <MainLayout />;
+  }
+
+  const routes = [
+    {
+      path: "/",
+      element: layout,
+      children: [
+        {
+          index: true,
+          element: <HomePage />,
+        },
+        {
+          path: "/login",
+          element: <Login />,
+        },
+        {
+          path: "/register",
+          element: <Register />,
+        },
+        {
+          path: "*",
+          element: <NotFound />,
+        },
+      ],
+    },
+  ];
+
+  const element = useRoutes(routes);
+
   return (
-    <Router history={history}>
-      <Switch>
-        <Route path="/login" exact>
-          <DefaultLayout components={<Login />}/>
-        </Route>
+    <div className="router-container">
+      <Suspense fallback={<LoadingIndicator />}>{element}</Suspense>
+    </div>
+  );
+};
 
-        <Route path="/register" exact>
-          <DefaultLayout components={<Register />}/>
-        </Route>
-
-        <AuthRoute path="/" exact>
-          <MainLayout components={<HomePage />} />
-        </AuthRoute>
-
-        <Route>
-          <NotFound />
-        </Route>
-      </Switch>
-    </Router>
-  )
-}
-
-export default Component
+export default Router;
