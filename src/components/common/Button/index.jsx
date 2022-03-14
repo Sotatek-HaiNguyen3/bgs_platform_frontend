@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styles from "./index.module.scss";
+import cn from "classnames";
 
 const Button = ({
   type,
@@ -12,10 +13,9 @@ const Button = ({
   disabled,
 }) => {
   let classNames = className?.split(" ")?.map((style) => styles[style]) || [];
-
   return (
     <button
-      className={[styles.btn, ...classNames].join(" ")}
+      className={cn(styles.btn, classNames)}
       onClick={onClick}
       disabled={disabled}
       type={type}

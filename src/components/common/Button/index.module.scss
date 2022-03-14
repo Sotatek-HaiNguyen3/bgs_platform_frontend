@@ -31,8 +31,10 @@
 }
 
 .btn.btnPrimary .btnTitle,
-.btn.btnSecondary.btnTitle {
+.btn.btnSecondary .btnTitle,
+.btn.btnOutlined .btnTitle {
   font-weight: 700;
+  font-size: 18px;
 }
 .btn.btnSecondary {
   background: #828282;
@@ -40,4 +42,13 @@
   border-radius: 12px;
   border: #828282;
   color: #fff;
+}
+.btn.btnOutlined {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 16px;
+}
+.btn.btnOutlinedOrange {
+  color: #ff7f09;
+  border-color: #ff7f09;
 }

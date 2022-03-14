@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styles from "./index.module.scss";
+import cn from "classnames";
 
 const Input = ({
   type,
@@ -18,7 +19,7 @@ const Input = ({
 
   let input = (
     <input
-      className={[styles.inputItem, ...classNames].join(" ")}
+      className={cn(styles.inputItem, classNames)}
       type={type}
       name={name}
       onChange={onChange}
@@ -30,7 +31,7 @@ const Input = ({
   if (type === "select") {
     input = (
       <select
-        className={[styles.inputItem, ...classNames].join(" ")}
+        className={cn(styles.inputItem, classNames)}
         type={type}
         name={name}
         onChange={onChange}
@@ -43,11 +44,11 @@ const Input = ({
   return (
     <div className={styles.inputWrapper}>
       <div
-        className={[
+        className={cn(
           styles.inputContainer,
           errors[name] ? styles["error"] : "",
-          ...classNames,
-        ].join(" ")}
+          classNames
+        )}
       >
         {input}
         {icon}
