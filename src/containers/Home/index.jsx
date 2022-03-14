@@ -1,17 +1,16 @@
-import React from 'react'
-import cn from 'classnames'
+import React, { useState } from "react";
+import cn from "classnames";
 
-import Counts from 'components/Counts'
+import Counts from "components/Counts";
 
-import s from './style.module.scss'
+import s from "./style.module.scss";
 
 const Home = () => {
-
   return (
-    <div className={cn(s.wrapper, 'container')}>
+    <div className={cn(s.wrapper, "container")}>
       <div className="row">
         <div className="col-6">
-          <h1>{ process.env.REACT_APP_APPLICATION_NAME }</h1>
+          <h1>{process.env.REACT_APP_APPLICATION_NAME}</h1>
           <p>My dashboard</p>
         </div>
 
@@ -20,7 +19,7 @@ const Home = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
