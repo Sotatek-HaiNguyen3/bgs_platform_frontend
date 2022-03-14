@@ -1,26 +1,27 @@
 import React from "react";
 import { Formik } from "formik";
-import { useNavigate } from "react-router-dom";
-
-import { loginUsernameEffect } from "store/auth/effects";
-
+import { Link } from "react-router-dom";
 import s from "./style.module.scss";
 import Button from "components/common/Button";
 import Input from "components/common/Input";
 import { HiOutlineMail } from "react-icons/hi";
 import { AiOutlineEye } from "react-icons/ai";
+import GoogleLogin from "./GoogleLogin";
+import { LoginSchema } from "utils/validator/login.schema";
+import { useDispatch, useSelector } from "react-redux";
+import { authLoginAction } from "store/auth/actions";
 
 const Login = () => {
-  let navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { login } = useSelector((state) => state.auth);
+
   return (
     <Formik
       initialValues={{ email: "", password: "" }}
-      onSubmit={(values, { setSubmitting }) => {
-        loginUsernameEffect(values).then((res) => {
-          console.log(res);
-          res?.token && navigate("/");
-        });
-      }}
+      onSubmit={(values, { setSubmitting }) =>
+        dispatch(authLoginAction(values))
+      }
+      validationSchema={LoginSchema}
     >
       {({
         values,
@@ -30,14 +31,15 @@ const Login = () => {
         handleBlur,
         handleSubmit,
         isSubmitting,
-        /* and other goodies */
       }) => (
         <form className={s.form} onSubmit={handleSubmit}>
+          <h1 className={s.title}>Login</h1>
+          <GoogleLogin />
           <Input
             className=""
             type="email"
             name="email"
-            placeholder="Email"
+            placeholder="Email address"
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.email}
@@ -45,7 +47,7 @@ const Login = () => {
             errors={errors}
           />
           <Input
-            className="error"
+            className=""
             type="password"
             name="password"
             placeholder="Password"
@@ -57,10 +59,17 @@ const Login = () => {
           />
           <Button
             type="submit"
-            disabled={isSubmitting}
-            title="Submit"
+            disabled={isSubmitting || login.isLoading}
+            title="Login"
             className="btnFull btnPrimary"
           />
+          <div className={s.bottom}>
+            <Link to="/forgot">Forgot password?</Link>
+            <p>
+              <span>Don’t have an account yet? </span>{" "}
+              <Link to="/register">Sign up</Link>
+            </p>
+          </div>
         </form>
       )}
     </Formik>
