@@ -5,6 +5,7 @@ import { Formik } from "formik";
 import { registerUsernameEffect } from "store/auth/effects";
 
 import s from "./style.module.scss";
+import Button from "components/common/Button";
 
 const Register = () => {
   let navigate = useNavigate();
@@ -45,7 +46,12 @@ const Register = () => {
             onBlur={handleBlur}
             value={values.password}
           />
-          <button type="submit">Submit</button>
+          <Button
+            type="submit"
+            title="Submit"
+            disabled={isSubmitting}
+            className="btnFull btnSecondary"
+          />
         </form>
       )}
     </Formik>

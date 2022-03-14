@@ -1,0 +1,26 @@
+.inputWrapper {
+  margin-bottom: 2.5rem;
+}
+.inputContainer {
+  display: flex;
+  align-items: center;
+  border: 1px solid #bdbdbd;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.inputItem {
+  flex: 1;
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.6rem;
+  color: #828282;
+  background: transparent;
+}
+.inputContainer.error {
+  border-color: #ff0000;
+}
+.errorMsg {
+  color: #ff0000;
+  text-align: left;
+}
