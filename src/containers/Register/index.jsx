@@ -50,7 +50,7 @@ const Register = () => {
             type="submit"
             title="Submit"
             disabled={isSubmitting}
-            className="btn-full btn-secondary"
+            className="btnFull btnSecondary"
           />
         </form>
       )}

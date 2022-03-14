@@ -45,7 +45,7 @@ const Login = () => {
             errors={errors}
           />
           <Input
-            className=""
+            className="error"
             type="password"
             name="password"
             placeholder="Password"
@@ -59,7 +59,7 @@ const Login = () => {
             type="submit"
             disabled={isSubmitting}
             title="Submit"
-            className="btn-full btn-primary"
+            className="btnFull btnPrimary"
           />
         </form>
       )}

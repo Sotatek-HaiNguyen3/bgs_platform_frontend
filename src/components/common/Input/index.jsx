@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./index.scss";
+import styles from "./index.module.scss";
 
 const Input = ({
   type,
@@ -12,10 +12,13 @@ const Input = ({
   icon,
   className,
   placeholder,
+  chilren,
 }) => {
+  let classNames = className?.split(" ")?.map((style) => styles[style]) || [];
+
   let input = (
     <input
-      className={["input-item"].join(" ")}
+      className={[styles.inputItem, ...classNames].join(" ")}
       type={type}
       name={name}
       onChange={onChange}
@@ -27,26 +30,29 @@ const Input = ({
   if (type === "select") {
     input = (
       <select
-        className={["input-item"].join(" ")}
+        className={[styles.inputItem, ...classNames].join(" ")}
         type={type}
         name={name}
         onChange={onChange}
         onBlur={onBlur}
       >
-        <option value="">Choose one</option>
+        {chilren}
       </select>
     );
   }
   return (
-    <div
-      className={[
-        "input-container",
-        errors[name] ? "error" : "",
-        className || "",
-      ].join(" ")}
-    >
-      {input}
-      {icon}
+    <div className={styles.inputWrapper}>
+      <div
+        className={[
+          styles.inputContainer,
+          errors[name] ? styles["error"] : "",
+          ...classNames,
+        ].join(" ")}
+      >
+        {input}
+        {icon}
+      </div>
+      {errors[name] && <p className={styles.errorMsg}> {errors[name]} </p>}
     </div>
   );
 };
@@ -60,6 +66,7 @@ Input.propTypes = {
   icon: PropTypes.element,
   className: PropTypes.string,
   placeholder: PropTypes.string,
+  children: PropTypes.element,
 };
 
 export default Input;

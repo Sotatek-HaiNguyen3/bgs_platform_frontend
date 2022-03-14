@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./index.scss";
+import styles from "./index.module.scss";
 
 const Button = ({
   type,
@@ -11,14 +11,16 @@ const Button = ({
   onClick,
   disabled,
 }) => {
+  let classNames = className?.split(" ")?.map((style) => styles[style]) || [];
+
   return (
     <button
-      className={["btn", className || ""].join(" ")}
+      className={[styles.btn, ...classNames].join(" ")}
       onClick={onClick}
       disabled={disabled}
       type={type}
     >
-      {icon} <span> {title} </span>
+      {icon} <span className={styles.btnTitle}> {title} </span>
     </button>
   );
 };

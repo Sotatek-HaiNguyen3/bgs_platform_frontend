@@ -1,0 +1,43 @@
+.btn {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #fff;
+  padding: 8px 20px;
+  border-radius: 90px;
+  border: 1px solid #f2f2f2;
+}
+.btnTitle {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.btn.btnFull {
+  width: 100%;
+}
+.btn:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.btn.btnPrimary {
+  background: linear-gradient(90deg, #3fc2d3 0%, #82c8ee 100%);
+  box-shadow: 0px 5px 15px rgba(47, 171, 221, 0.4);
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--primary-color);
+  color: #fff;
+}
+
+.btn.btnPrimary .btnTitle,
+.btn.btnSecondary.btnTitle {
+  font-weight: 700;
+}
+.btn.btnSecondary {
+  background: #828282;
+  padding: 16px;
+  border-radius: 12px;
+  border: #828282;
+  color: #fff;
+}

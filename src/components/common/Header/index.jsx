@@ -1,5 +1,5 @@
 import React from "react";
-import "./index.scss";
+import styles from "./index.module.scss";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../Button";
 import { FaUser } from "react-icons/fa";
@@ -8,12 +8,12 @@ const Header = () => {
   const navigate = useNavigate();
 
   return (
-    <header className="header">
-      <div className="logo-container">
+    <header className={styles.header}>
+      <div className={styles.logoContainer}>
         <h1>BGS</h1>
       </div>
-      <nav className="nav">
-        <ul className="links">
+      <nav className={styles.nav}>
+        <ul className={styles.links}>
           <li>
             <Link to="/dashboard">My dashboard</Link>
           </li>
@@ -31,7 +31,7 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-      <div className="actions">
+      <div className={styles.actions}>
         <Button title="Sign up" onClick={() => navigate("/register")} />
         <Button
           title="Login"
