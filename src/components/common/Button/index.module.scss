@@ -17,10 +17,7 @@
 .btn.btnFull {
   width: 100%;
 }
-.btn:disabled {
-  opacity: 0.5;
-  pointer-events: none;
-}
+
 .btn.btnPrimary {
   background: linear-gradient(90deg, #3fc2d3 0%, #82c8ee 100%);
   box-shadow: 0px 5px 15px rgba(47, 171, 221, 0.4);
@@ -51,4 +48,10 @@
 .btn.btnOutlinedOrange {
   color: #ff7f09;
   border-color: #ff7f09;
+}
+.btn:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+  background: #828282;
+  border: #828282;
 }

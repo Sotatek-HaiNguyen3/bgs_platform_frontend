@@ -1,6 +1,6 @@
 .header {
   background-color: var(--primary-color);
-  padding: 2rem;
+  padding: 16px;
 }
 .headerInner {
   display: flex;
@@ -9,13 +9,13 @@
 }
 .links {
   display: flex;
-  gap: 2.5rem;
+  gap: 20px;
   a {
-    color: #111;
+    color: #111111;
     font-size: 16px;
   }
 }
 .actions {
   display: flex;
-  gap: 2.5rem;
+  gap: 14px;
 }

@@ -1,5 +1,5 @@
 .form {
-  max-width: 400px;
+  max-width: 355px;
   margin: 70px auto;
   @media (max-width: 500px) {
     padding: 0 1.5rem;
@@ -23,16 +23,36 @@
 .googleLoginContainer button span {
   font-weight: 600 !important;
   color: #2fabdd;
+  padding-top: 9px !important;
+  font-size: 18px;
+  position: relative;
+}
+
+.googleLoginContainer button span::after {
+  content: "\279C";
+  font-weight: bold;
+  font-size: 20px;
+  position: absolute;
+  top: 7px;
+  right: -14px;
+}
+
+.googleLoginContainer button div {
+  padding-right: 0 !important;
 }
 .form button[type="submit"] {
   margin-top: 3.5rem;
 }
 .bottom {
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
   font-size: 16px;
   line-height: 2;
 }
 .bottom a {
   color: #2fabdd;
   text-decoration: underline;
+}
+.bottom a:first-child {
+  display: block;
+  margin-bottom: 1rem;
 }

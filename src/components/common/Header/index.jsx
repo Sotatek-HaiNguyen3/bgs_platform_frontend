@@ -3,6 +3,7 @@ import styles from "./index.module.scss";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../Button";
 import { FaUser } from "react-icons/fa";
+import AvatarContainer from "../AvatarContainer";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -38,7 +39,11 @@ const Header = () => {
             <Button
               title="Login"
               onClick={() => navigate("/login")}
-              icon={<FaUser />}
+              icon={
+                <AvatarContainer>
+                  <FaUser color="#AEB4B7" size={16} />
+                </AvatarContainer>
+              }
             />
           </div>
         </div>
