@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik } from "formik";
 import { Link } from "react-router-dom";
 import s from "./style.module.scss";
 import Button from "components/common/Button";
 import Input from "components/common/Input";
 import { HiOutlineMail } from "react-icons/hi";
-import { AiOutlineEye } from "react-icons/ai";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import GoogleLogin from "./GoogleLogin";
 import { LoginSchema } from "utils/validator/login.schema";
 import { useDispatch, useSelector } from "react-redux";
@@ -14,6 +14,10 @@ import { authLoginAction } from "store/auth/actions";
 const Login = () => {
   const dispatch = useDispatch();
   const { login } = useSelector((state) => state.auth);
+
+  const [changeIcon, setChangeIcon] = useState(false);
+
+  const toggleIcon = () => setChangeIcon((prevState) => !prevState);
 
   return (
     <Formik
@@ -43,7 +47,7 @@ const Login = () => {
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.email}
-            icon={<HiOutlineMail size={24} color="#BDBDBD" />}
+            icon={<HiOutlineMail size={18.5} color="#BDBDBD" />}
             errors={errors}
           />
           <Input
@@ -54,8 +58,18 @@ const Login = () => {
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.password}
-            icon={<AiOutlineEye size={24} color="#BDBDBD" />}
+            icon={
+              <AiOutlineEye size={18.5} color="#BDBDBD" onClick={toggleIcon} />
+            }
+            extraIcon={
+              <AiOutlineEyeInvisible
+                size={18.5}
+                color="#BDBDBD"
+                onClick={toggleIcon}
+              />
+            }
             errors={errors}
+            changeIcon={changeIcon}
           />
           <Button
             type="submit"
