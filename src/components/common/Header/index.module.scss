@@ -1,9 +1,11 @@
 .header {
+  background-color: var(--primary-color);
+  padding: 2rem;
+}
+.headerInner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--primary-color);
-  padding: 2rem 4rem;
 }
 .links {
   display: flex;
