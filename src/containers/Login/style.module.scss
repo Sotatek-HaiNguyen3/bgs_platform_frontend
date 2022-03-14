@@ -1,25 +1,38 @@
 .form {
   max-width: 400px;
-  margin: 50px auto;
-  text-align: right;
+  margin: 70px auto;
+  @media (max-width: 500px) {
+    padding: 0 1.5rem;
+  }
 }
-
-.field {
+.title {
+  margin-bottom: 2.5rem;
+  font-size: 40px;
+  font-weight: 400;
+}
+.googleLoginContainer button {
   width: 100%;
-  margin-bottom: 15px;
-  border: none;
-  box-shadow: none;
-  height: 40px;
-  background-color: #cacaca;
-  font-size: 14px;
-  padding: 0 15px;
+  justify-content: center;
+  margin-bottom: 3.5rem;
+  border: 1px solid;
+  border: 1px solid #2fabdd !important;
+  border-radius: 1rem !important;
+  box-shadow: none !important;
+  height: 51px;
 }
-
-button {
-  border: none;
-  box-shadow: none;
-  background-color: transparent;
+.googleLoginContainer button span {
+  font-weight: 600 !important;
+  color: #2fabdd;
+}
+.form button[type="submit"] {
+  margin-top: 3.5rem;
+}
+.bottom {
+  margin-top: 2.5rem;
   font-size: 16px;
-  font-weight: bold;
-  padding: 0;
+  line-height: 2;
+}
+.bottom a {
+  color: #2fabdd;
+  text-decoration: underline;
 }
