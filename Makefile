@@ -1,4 +1,4 @@
 dev:
-	docker-compose up -d
-stop:
-	docker-compose stop
+	docker-compose exec frontend sh -c "npm install && npm run start"
+kill:
+	docker-compose kill

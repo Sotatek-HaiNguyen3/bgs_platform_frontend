@@ -2,8 +2,7 @@ version: '3.7'
 
 services:
 
-  bgs_frontend:
-    container_name: bgs_frontend
+  frontend:
     build:
       context: .
       dockerfile: Dockerfile
