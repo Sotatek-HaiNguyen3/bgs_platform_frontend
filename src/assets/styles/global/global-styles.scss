@@ -48,3 +48,13 @@ img {
 .Toastify__toast-container {
   min-width: 444px;
 }
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  .body-content {
+    flex: 1;
+  }
+}

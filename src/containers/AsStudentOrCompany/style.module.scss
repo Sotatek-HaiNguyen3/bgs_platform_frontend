@@ -1,0 +1,57 @@
+@import "src/assets/styles/variables.scss";
+
+.wrapperContent {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .contentView {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+
+    .mess {
+      // font-family: 'Poppins';
+      // font-style: normal;
+      font-weight: 400;
+      font-size: 40px;
+      line-height: 86%;
+      text-align: center;
+      letter-spacing: -1.25px;
+      color: $primary_black;
+    }
+  
+    .description {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: center;
+      letter-spacing: -0.25px;
+      color: $primary_black;
+      margin-top: 18px;
+    }
+  }
+}
+
+.buttonView {
+  background: $primary_blue;
+  margin-top: 18px;
+  width: 100%;
+  height: 56px;
+  left: 0px;
+  background: $primary_blue;
+  box-shadow: $primary-shadow;
+  border-radius: 12px;
+  border: none;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: -0.25px;
+  color: $primary_light;
+  cursor: pointer;
+}

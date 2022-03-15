@@ -4,9 +4,11 @@ import { Outlet } from "react-router-dom";
 
 export default function Component() {
   return (
-    <div className="main">
+    <div className="main-content">
       <Header />
-      <Outlet />
+      <div className="body-content">
+        <Outlet />
+      </div>
     </div>
   );
 }

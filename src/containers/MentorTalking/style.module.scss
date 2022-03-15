@@ -1,0 +1,22 @@
+@import "src/assets/styles/variables.scss";
+
+.mentorTalkingWrapper {
+  display: flex;
+  justify-content: center;
+
+  .listQuestion {
+    max-width: 652px;
+    margin-top: 63px;
+    margin-bottom: 57px;
+
+    .buttonView {
+      text-align: end;
+      margin-top: 21px;
+
+      .customButton {
+        margin-top: 0;
+        max-width: 251px;
+      }
+    }
+  }
+}
