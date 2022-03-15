@@ -44,7 +44,7 @@ const Input = ({
     );
   }
   return (
-    <div className={styles.inputWrapper}>
+    <div className={cn(styles.inputWrapper, className)}>
       <div
         className={cn(
           styles.inputContainer,
