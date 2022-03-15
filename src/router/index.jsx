@@ -7,7 +7,7 @@ import getToken from "utils/auth/get-token";
 import LoadingIndicator from "components/common/LoadingIndicator";
 
 const HomePage = lazy(() => import("containers/Home"));
-const SignUp = lazy(() => import("containers/SignUp"));
+const Register = lazy(() => import("containers/Register"));
 const Login = lazy(() => import("containers/Login"));
 const NotFound = lazy(() => import("containers/NotFound"));
 
@@ -35,7 +35,7 @@ const Router = () => {
         },
         {
           path: "/register",
-          element: <SignUp />,
+          element: <Register />,
         },
         {
           path: "*",

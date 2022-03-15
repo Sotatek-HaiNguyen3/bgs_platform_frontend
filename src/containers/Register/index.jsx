@@ -7,7 +7,7 @@ import * as _ from "lodash";
 import { registerUsernameEffect } from "store/auth/effects";
 
 import s from "./style.module.scss";
-import { SignUpSchema } from "utils/validator/sign_up.schema";
+import { RegisterSchema } from "utils/validator/register.schema";
 import Button from "components/common/Button";
 import Input from "components/common/Input";
 import { HiOutlineMail } from "react-icons/hi";
@@ -46,7 +46,7 @@ const Register = () => {
           last_name: "",
           role: "",
         }}
-        validationSchema={SignUpSchema}
+        validationSchema={RegisterSchema}
         onSubmit={(values, { setSubmitting }) => {
           registerUsernameEffect(values).then((res) => {
             res?.data?.id && navigate("/login");
