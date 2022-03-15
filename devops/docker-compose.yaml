@@ -1,0 +1,11 @@
+version: '3'
+services:
+  back:
+    container_name: fe
+    build: 
+      context: ../
+      dockerfile: devops/Dockerfile
+    ports:
+      - '80:80'
+    environment:
+      HOST: 0.0.0.0
