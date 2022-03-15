@@ -78,7 +78,7 @@ const Login = () => {
             className="btnFull btnPrimary"
           />
           <div className={s.bottom}>
-            <Link to="/forgot">Forgot password?</Link>
+            <Link to="/reset-your-pass">Forgot password?</Link>
             <p>
               <span>Don’t have an account yet? </span>{" "}
               <Link to="/register">Sign up</Link>

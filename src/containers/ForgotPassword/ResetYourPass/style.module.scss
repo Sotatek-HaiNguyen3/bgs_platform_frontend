@@ -1,0 +1,76 @@
+@import "src/assets/styles/variables.scss";
+.wrapper {
+  width: 100%;
+}
+p {
+  font-family: $poppins;
+  font-weight: 400;
+}
+.container{
+  display: flex;
+  min-height: 90vh;
+  align-items: center;
+}
+.divLeft{
+  flex-basis: 30%;
+}
+.divCenter{
+  flex-basis: 40%;
+  display: flex;
+  justify-content: center;
+
+  div form{
+    max-width: 572px;
+    display: flex;
+    flex-direction: column;
+    h2{
+      font-size: 40px;
+      height: 48px;
+      line-height: 48px;
+    }
+    label{
+      font-size: 18px;
+      height: 48px;
+      line-height: 24px;
+      margin-top: 30px;
+      a{
+        color: #82C8EE;
+        text-decoration: underline;
+      }
+    }
+    input{
+      border-radius: 12px;
+      border: 1px solid #E1E1E1;
+      height: 56px;
+      padding: 16px;
+      font-size: 18px;
+      margin-top: 30px;
+    }
+    button{
+      border-radius: 12px;
+      border: 1px solid #3FC2D3;
+      background-image: linear-gradient( to right,#3FC2D3, #82C8EE);
+      height: 56px;
+      padding: 16px;
+      font-size: 18px;
+      color: white;
+      font-weight: 700;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+    span{
+      color: red;
+      font-weight: 400;
+      font-size: 18px;
+    }
+    .iconEmail{ 
+      margin-left: 95%;
+      margin-top: -35px;
+      margin-bottom: 20px;
+    }
+  }
+}
+.divRight{
+  flex-basis: 30%;
+}
+
