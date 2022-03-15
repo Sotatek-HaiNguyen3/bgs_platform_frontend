@@ -7,7 +7,8 @@ const LoginSchema = Yup.object().shape({
     .required("Please enter a password."),
   email: Yup.string()
     .email("Please enter a valid email address.")
-    .required("Please enter a email"),
+    .required("Please enter a email")
+    .max(255, "Please enter a valid email address."),
 });
 
 export { LoginSchema };
