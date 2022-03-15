@@ -1,4 +1,6 @@
+@import "src/assets/styles/variables.scss";
+
 .errorMsg {
-  color: #ff0000;
-  font-size: 18px;
+  color: $primary_red;
+  font-size: 1.8rem;
 }
