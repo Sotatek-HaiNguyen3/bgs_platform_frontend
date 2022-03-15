@@ -27,3 +27,13 @@ img {
 .no-scroll {
     overflow: hidden;
 }
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    
+    .body-content {
+        flex: 1;
+    }
+}

@@ -1,0 +1,57 @@
+@import "src/assets/styles/variables.scss";
+
+.itemQuestion {
+  width: 100%;
+  height: 288px;
+  background: rgba($color: $primary_light, $alpha: 0.22);
+  box-shadow: $secondary-shadow;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 17px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .question {
+    font-family: $poppins;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.25px;
+    color: $primary_black;
+    display: flex;
+
+    .numberQuestion {
+      margin-right: 5px;
+    }
+  }
+
+  .answerView {
+    font-family: $poppins;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: $secondary_black;
+    margin-top: 20px;
+  }
+}
+
+.radioView {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+
+  .iconCheckbox {
+    cursor: pointer;
+    max-width: 24px;
+    max-height: 24px;
+    margin-right: 10px;
+  }
+
+  .label {
+    cursor: pointer;
+  }
+}

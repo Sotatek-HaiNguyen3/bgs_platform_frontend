@@ -15,6 +15,8 @@ const Login = lazy(() => import("containers/Login"));
 const ResetYourPass = lazy(() => import("containers/ForgotPassword/ResetYourPass"));
 
 const NotFound = lazy(() => import("containers/NotFound"));
+const AsStudentOrCompany = lazy(() => import("containers/AsStudentOrCompany"))
+const MentorTalking = lazy(() => import("containers/MentorTalking"))
 
 const Router = () => {
   let auth = getToken();
@@ -57,6 +59,14 @@ const Router = () => {
         {
           path: "/sent-code",
           element: <SentCode />,
+        },
+        {
+          path: "/as-student-or-company",
+          element: <AsStudentOrCompany />,
+        },
+        {
+          path: "/mentor-talking",
+          element: <MentorTalking />,
         },
         {
           path: "*",
