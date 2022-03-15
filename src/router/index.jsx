@@ -10,6 +10,8 @@ const HomePage = lazy(() => import("containers/Home"));
 const Register = lazy(() => import("containers/Register"));
 const Login = lazy(() => import("containers/Login"));
 const NotFound = lazy(() => import("containers/NotFound"));
+const AsStudentOrCompany = lazy(() => import("containers/AsStudentOrCompany"))
+const MentorTalking = lazy(() => import("containers/MentorTalking"))
 
 const Router = () => {
   let auth = getToken();
@@ -36,6 +38,14 @@ const Router = () => {
         {
           path: "/register",
           element: <Register />,
+        },
+        {
+          path: "/as-student-or-company",
+          element: <AsStudentOrCompany />,
+        },
+        {
+          path: "/mentor-talking",
+          element: <MentorTalking />,
         },
         {
           path: "*",
